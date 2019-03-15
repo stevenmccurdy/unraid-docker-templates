@@ -2,21 +2,43 @@
 <Container version="2">
   <Name>Podfox</Name>
   <Repository>stevenmccurdy/podfox</Repository>
-  <Network>bridge</Network>
-  <Privileged>false</Privileged>
-  <Support>https://gitlab.com/stevenmccurdy/podfox</Support>
-  <Overview>A program for managing and catching podcasts from the terminal(and automatically).</Overview>
-  <Beta>False</Beta>
-  <Category>Downlaoder: Tools: MediaApp:Other</Category>
-  <Date>2019-03-09</Date>
-  <Icon></Icon>
-  <ExtraParams/>
-  <Description>A program for managing and catching podcasts from the terminal(and automatically).</Description>
   <Registry>https://cloud.docker.com/u/stevenmccurdy/repository/docker/stevenmccurdy/podfox</Registry>
-  <GitHub>https://github.com/stevenmccurdy/unraid-docker-templates</GitHub>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
   <Project>https://gitlab.com/stevenmccurdy/podfox</Project>
-
-  <Config Name="Podcasts Path" Target="/podcasts" Default="/mnt/user/media/podcasts" Mode="rw" Description="Container path: /podcasts" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/podcasts</Config>
-
-  <Config Name="Config Path" Target="/root" Default="/mnt/user/appdata/podfox" Mode="rw" Description="Container path: /root" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/podfox</Config>
+  <Overview>A program for managing and catching podcasts from the terminal (and automatically with cron).</Overview>
+  <Category>Downloaders: MediaApp:Other Status:Beta</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://gitlab.com/stevenmccurdy/podfox/raw/master/logo/logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1552678975</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>A program for managing and catching podcasts from the terminal (and automatically with cron).</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/media/podcasts/</HostDir>
+      <ContainerDir>/podcasts</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/podfox/</HostDir>
+      <ContainerDir>/root</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Podcasts" Target="/podcasts" Default="" Mode="rw" Description="Container Path: /podcasts" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/media/podcasts/</Config>
+  <Config Name="Config" Target="/root" Default="" Mode="rw" Description="Container Path: /root" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/podfox/</Config>
 </Container>
